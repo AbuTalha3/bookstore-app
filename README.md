@@ -2,7 +2,7 @@
 
 <div align="center">
  
-  <h3><b>Maths Magicians</b></h3>
+  <h3><b>Bookstore App</b></h3>
 
 </div>
 
@@ -31,9 +31,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Maths Magicians <a name="about-project"></a>
+# 📖 Bookstore App <a name="about-project"></a>
 
-> In this project, I build a Maths Magicians App using react.
+> In this project, I build a Bookstore App using react.
 
 ## 🛠 Built With <a name="built-with">
 - HTML
@@ -53,17 +53,15 @@
     <li>Css </li>
     <li>Javascript </li>
     <li> React </li>
-     </ul>
+  </ul>
 </details>
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-  **[Calculator]**
-  > It will be able to perform all math operations.
-  **[API]**
-  > Fetch data from API.
+  **[Books List]**
+  > It has a stored book list.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -85,8 +83,7 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-cd my-folder git clone git@github.com:HenaryKhuraijam/math-magicians-react.git
-
+cd my-folder git clone git@github.com:AbuTalha3/bookstore-app.git
 ### Install
 
 Install this project with:
@@ -133,12 +130,6 @@ GitHub pages
 <!-- AUTHOR -->
 
 ## 👥 Author <a name="author"></a>
-
-👤 **Khuraijam Henary Singh**
-
-- GitHub: [@HenaryKhuraijam](https://github.com/HenaryKhuraijam)
-- Twitter: [@HenaryKhuraijam](https://twitter.com/HenaryKhuraijam)
-- LinkedIn: [Henary Khuraijam](https://www.linkedin.com/in/henary-khuraijam-50487317a)
 
 👤 **Abu Talha**
 
