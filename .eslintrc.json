@@ -30,7 +30,6 @@
   ],
   "ignorePatterns": [
     "dist/",
-    "build/",
-    "Book.jsx"
+    "build/"
   ]
 }
