@@ -6,7 +6,7 @@
 }
 
 .display-flex {
-  display : flex;
+  display: flex;
 }
 
 .book-container {
@@ -23,7 +23,7 @@
 
 .book-container ul {
   width: 45%;
-  display : flex;
+  display: flex;
   font-family: 'Roboto Slab', sans-serif;
   font-weight: bold;
   flex-direction: row;
@@ -34,7 +34,7 @@
 
 .remove-button {
   font-family: 'Roboto Slab', sans-serif;
-  color: #4386BF;
+  color: #4386bf;
   background-color: #fff;
   border: #fff;
   font-size: large;
