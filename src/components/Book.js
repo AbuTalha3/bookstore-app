@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { removeBook } from '../redux/books/booksSlice';
+import { removeBooks } from '../redux/books/booksSlice';
 
 function Book({
   // eslint-disable-next-line camelcase
@@ -9,7 +9,7 @@ function Book({
 }) {
   const dispatch = useDispatch();
   const handleDelete = () => {
-    dispatch(removeBook(item_id));
+    dispatch(removeBooks(item_id));
   };
   return (
     <div>

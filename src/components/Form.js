@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import { addBooks } from '../redux/books/booksSlice';
 
 function Form() {
   const dispatch = useDispatch();
@@ -9,10 +9,9 @@ function Form() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title && author) {
-      dispatch(addBook({
+      dispatch(addBooks({
         title,
         author,
-        category: 'fiction',
         item_id: Math.random().toString(),
       }));
       setTitle('');
