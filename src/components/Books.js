@@ -14,6 +14,7 @@ function Books() {
             title={book.title}
             author={book.author}
             category={book.category}
+            item_id={book.item_id}
           />
         ))}
       </ul>
