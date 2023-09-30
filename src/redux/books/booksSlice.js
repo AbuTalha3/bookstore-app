@@ -1,9 +1,8 @@
-/* eslint-disable camelcase */
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable import/no-extraneous-dependencies */
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const apiURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/X1MGGnp9c23ZRQ5ZmbEK/books';
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/X1MGGnp9c23ZRQ5ZmbEK/books';
 
 const initialState = {
   books: [],
@@ -12,61 +11,96 @@ const initialState = {
   isSuccessful: false,
 };
 
-export const getBooks = createAsyncThunk('books/getBooks', async () => {
-  const response = await axios.get(apiURL);
-  return response.data;
-});
-
-export const addBooks = createAsyncThunk('books/addBooks', async ({ item_id, title, author }) => {
-  const response = await axios.post(apiURL, {
-    item_id,
-    title,
-    author,
-    category: 'fiction',
+const changeToObjectData = (data) => {
+  const newDataArray = [];
+  data.forEach((element) => {
+    const newObject = {
+      id: element[0],
+      title: element[1][0].title,
+      author: element[1][0].author,
+      category: element[1][0].category,
+    };
+    newDataArray.push(newObject);
   });
-  return response.data;
+  return newDataArray;
+};
+
+export const getBooks = createAsyncThunk('book/getBooksData', async () => {
+  try {
+    const dataStream = await axios(url);
+    let data = Object.entries(dataStream.data);
+    data = changeToObjectData(data);
+    return data;
+  } catch (error) {
+    return error;
+  }
 });
 
-export const removeBooks = createAsyncThunk('books/removeBooks', async (item_id) => {
-  const response = await axios.delete(`${apiURL}/${item_id}`);
-  return response.data;
+export const addBooks = createAsyncThunk('book/addBooks', async ({ id, title, author }) => {
+  try {
+    const dataStream = await axios.post(url, {
+      item_id: id,
+      title,
+      author,
+      category: 'Non fiction',
+    });
+    return dataStream;
+  } catch (error) {
+    return error;
+  }
+});
+
+export const deleteBook = createAsyncThunk('book/deleteBook', async (id) => {
+  try {
+    const dataStream = await axios.delete(`${url}/${id}`);
+    return dataStream;
+  } catch (error) {
+    return error;
+  }
 });
 
 const booksSlice = createSlice({
-  name: 'books',
+  name: 'book',
   initialState,
   extraReducers: (builder) => {
     builder.addCase(getBooks.pending, (state) => {
       state.isLoading = true;
     });
+
     builder.addCase(getBooks.fulfilled, (state, action) => {
       state.isLoading = false;
       state.books = action.payload;
     });
+
     builder.addCase(getBooks.rejected, (state) => {
       state.isLoading = false;
       state.isError = true;
     });
+
     builder.addCase(addBooks.pending, (state) => {
       state.isSuccessful = false;
     });
+
     builder.addCase(addBooks.fulfilled, (state) => {
       state.isSuccessful = true;
     });
+
     builder.addCase(addBooks.rejected, (state) => {
       state.isSuccessful = false;
     });
-    builder.addCase(removeBooks.pending, (state) => {
+
+    builder.addCase(deleteBook.pending, (state) => {
       state.isSuccessful = false;
     });
-    builder.addCase(removeBooks.fulfilled, (state) => {
+
+    builder.addCase(deleteBook.fulfilled, (state) => {
       state.isSuccessful = true;
     });
-    builder.addCase(removeBooks.rejected, (state) => {
+
+    builder.addCase(deleteBook.rejected, (state) => {
       state.isSuccessful = false;
     });
   },
 });
 
 export default booksSlice.reducer;
-export const { addBook, removeBook } = booksSlice.actions;
