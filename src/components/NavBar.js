@@ -1,21 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/NavBar.css';
 
 function NavBar() {
   return (
-    <div>
-      <h2>Bookstore CMS</h2>
-      <div>
+    <nav className="navigation-main">
+      <h2 className="main-heading">Bookstore CMS</h2>
+      <div className="nav-list-div">
         <ul className="nav-list">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">BOOKS</Link>
           </li>
           <li>
-            <Link to="/category">Categories</Link>
+            <Link to="/category">CATEGORIES</Link>
           </li>
         </ul>
       </div>
-    </div>
+    </nav>
   );
 }
 
