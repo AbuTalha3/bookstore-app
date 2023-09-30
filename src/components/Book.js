@@ -8,12 +8,12 @@ function Book({ books }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="book-container">
+    <div className="book-container display-flex">
       <ul>
         {books.map((book) => (
           <li key={book.id}>
             <div>
-              <div className="book-left">
+              <div className="book-left display-flex">
                 <p className="category-book">{book.category}</p>
                 <h2 className="title-book">{book.title}</h2>
                 <p className="author-book">
@@ -31,9 +31,9 @@ function Book({ books }) {
           </li>
         ))}
       </ul>
-      <div className="book-middle">
+      <div className="book-middle display-flex">
         <h2 className="circle-percent">O</h2>
-        <div className="middle-div">
+        <div className="middle-div display-flex">
           <p>100%</p>
           <p>Completed</p>
         </div>

@@ -4,17 +4,6 @@ ul {
   list-style: none;
 }
 
-/* .category-cat {
-  width: 100%;
- } */
-
-/* .heading-cat {
-  text-align: left;
-  margin-left: 56px;
-  margin-top: 25px;
-  font-family: 'Times New Roman', sans-serif;
- } */
-
 .book-form {
   flex-direction: column;
   background-color: #e6e5e3;
@@ -37,6 +26,7 @@ ul {
   height: 70%;
   margin-left: 20px;
   color: rgb(116, 96, 72);
+  font-family: 'Roboto Slab', sans-serif;
 }
 
 .input-title {
@@ -55,4 +45,5 @@ ul {
   padding: 9px 9px;
   color: #fff;
   font-weight: bold;
+  font-family: 'Roboto Slab', sans-serif;
 }
