@@ -1,7 +1,16 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import { removeBook } from '../redux/books/booksSlice';
 
-function Book({ title, author, category }) {
+function Book({
+  // eslint-disable-next-line camelcase
+  title, author, category, item_id,
+}) {
+  const dispatch = useDispatch();
+  const handleDelete = () => {
+    dispatch(removeBook(item_id));
+  };
   return (
     <div>
       <ul>
@@ -9,7 +18,7 @@ function Book({ title, author, category }) {
         <li>{title}</li>
         <li>{category}</li>
       </ul>
-      <button type="button">Remove Book</button>
+      <button onClick={handleDelete} type="button">Remove Book</button>
     </div>
   );
 }
@@ -18,6 +27,7 @@ Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
+  item_id: PropTypes.string.isRequired,
 };
 
 export default Book;
