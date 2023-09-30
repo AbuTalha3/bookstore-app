@@ -42,7 +42,7 @@ export const addBooks = createAsyncThunk('book/addBooks', async ({ id, title, au
       item_id: id,
       title,
       author,
-      category: 'Non fiction',
+      category: 'Action',
     });
     return dataStream;
   } catch (error) {

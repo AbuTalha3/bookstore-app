@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Montserrat&family=Roboto+Slab&display=swap');
+
+:root {
+  --azure: #0290ff;
+  --black-two: #121212;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.book-container {
+  width: 90%;
+  padding: 1.5rem 1rem;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  margin: 1.25rem auto;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  justify-content: space-between;
+}
+
+.book-container ul {
+  width: 45%;
+  display: flex;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: bold;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 18px;
+}
+
+.remove-button {
+  font-family: 'Roboto Slab', sans-serif;
+  color: #4386bf;
+  background-color: #fff;
+  border: #fff;
+  font-size: large;
+}
+
+.book-left {
+  width: 100%;
+  padding: 1.5rem 1rem;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 1.25rem auto;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.features li {
+  border-right: 3px solid rgb(163, 157, 157);
+  padding-right: 15px;
+  color: rgb(129, 153, 169);
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.category-book {
+  color: rgb(132, 123, 69);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.update-progress {
+  background-color: #0290ff;
+  width: max-content;
+  padding: 9px 9px;
+  color: #fff;
+  font-weight: 100;
+}
+
+.author-book {
+  color: rgb(129, 153, 169);
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.book-right {
+  width: 25%;
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+  margin-left: 150px;
+}
+
+.book-middle {
+  width: 30%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  border-right: 2px solid rgba(216, 212, 212, 0.548);
+}
+
+.middle-div {
+  flex-direction: column;
+}
+
+.circle-percent {
+  font-size: 80px;
+  font-weight: 200;
+  color: #a49c9c;
+}

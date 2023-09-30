@@ -1,9 +1,10 @@
 import React from 'react';
+import '../styles/Categories.css';
 
 function Categories() {
   return (
-    <div>
-      <h1>This is a category Page</h1>
+    <div className="category-cat">
+      <h1 className="heading-cat">Under Construction</h1>
     </div>
   );
 }
