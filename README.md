@@ -32,7 +32,7 @@
 
 # 📖 Bookstore App <a name="about-project"></a>
 
-> In this project, I build a Bookstore App using react.
+> In this project, I build a Bookstore App using React which stores the books and you can search a specific book and keep a record of the read percentage.
 
 ## 🛠 Built With <a name="built-with">
 - HTML
